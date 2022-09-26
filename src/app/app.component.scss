@@ -1,0 +1,338 @@
+* {
+  //border: 1px solid black;
+}
+
+$padding-on-sections: 25px;
+$padding-on-sections-small: 10px;
+$border-radius-section: 5px;
+@mixin menu-background-mixin($background, $border-color) {
+  display: flex;
+  flex-direction: row;
+  background: $background;
+  border-radius: $border-radius-section;
+  border: 2px solid $border-color;
+  padding: 3px 0;
+}
+
+@mixin menu-section($background, $border, $height) {
+  background: $background;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $padding-on-sections;
+}
+
+#app {
+  display: flex;
+
+  #main-sidebar {
+    border-right: 1px solid black;
+
+    width: 300px;
+    height: 100vh;
+    padding: 0 $padding-on-sections;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .sidebar-top-section {
+
+      width: 100%;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      #logo {
+
+        height: 30px;
+        width: 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      #main-menu-button {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    #sidebar-main-section {
+
+      .menu-buttons {
+
+        div {
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+
+          span {
+            padding-right: 7px;
+          }
+        }
+      }
+    }
+
+
+    #favorite-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+
+      .sidebar-favorites-section {
+        //padding: 20px 0;
+        div {
+          padding: 5px 0;
+          display: flex;
+          align-items: center;
+
+
+          .favorite-item {
+            margin-left: 18px;
+          }
+        }
+      }
+
+    }
+
+    #bottom-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #main-container {
+    width: 100%;
+    height: 100vh;
+
+
+    #main-navbar {
+      height: 100px;
+      //width: 100%;
+
+      display: flex;
+      align-items: center;
+      padding: 0 $padding-on-sections;
+      justify-content: space-between;
+
+      .sidebar-left-side {
+        display: flex;
+        align-items: center;
+
+        #open-sidebar-button {
+          height: 48px;
+          width: 48px;
+        }
+
+        #navbar-page-title {
+          display: flex;
+          flex-direction: row;
+
+          .navbar-title-options {
+
+          }
+        }
+      }
+
+      .sidebar-right-side {
+        display: flex;
+        align-items: center;
+
+        .personas-list {
+          display: flex;
+        }
+      }
+    }
+
+    #main-menu {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      padding: 0 $padding-on-sections;
+
+      .main-menu-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        border-radius: $border-radius-section;
+        border: 2px solid black;
+        padding: 3px 0;
+
+        .menu-buttons {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+
+          .menu-button {
+            height: 100%;
+            padding: 10px 15px;
+          }
+
+
+        }
+
+        .action-buttons {
+          padding: 0 $padding-on-sections-small;
+
+          .add-chart {
+            color: white;
+          }
+        }
+      }
+    }
+
+    #action-bar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0 $padding-on-sections;
+
+      .action-bar-wrapper {
+        width: 100%;
+        padding: 6px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: $border-radius-section;
+        border: 2px solid black;
+
+
+        .action-bar-left {
+          .action-notification {
+            padding: 0 $padding-on-sections-small;
+          }
+
+
+        }
+
+        .action-buttons {
+          padding: 0 $padding-on-sections-small;
+        }
+      }
+    }
+
+    #kanban-section {
+
+      display: flex;
+      flex-direction: row;
+      padding: $padding-on-sections $padding-on-sections;
+
+
+      .kanban-column {
+        flex: 1;
+        padding: 10px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+
+        .kanban-top-section-wrapper {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+
+          .kanban-action-title {
+            font-weight: 900;
+          }
+
+          .kanban-action-section {
+            display: flex;
+            flex-direction: row;
+
+          }
+        }
+
+        .card {
+          flex: 1;
+          margin: $padding-on-sections-small 0;
+          padding: $padding-on-sections-small;
+          border-radius: $border-radius-section;
+          border: 1px solid black;
+
+
+          .card-title {
+            padding-bottom: $padding-on-sections-small;
+            width: 100%;
+          }
+
+          .card-wrapper-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .card-action {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+            }
+          }
+
+        }
+
+        .add-new-card {
+          padding: $padding-on-sections-small;
+          border-radius: $border-radius-section;
+          border: 1px solid black;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+  }
+
+
+}
+
+//global style
+
+.title-section {
+  padding: 20px 0;
+}
+
+.square-color-marker {
+  background: blueviolet;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+}
+
+.tag-element-color {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  .tagged-item {
+    margin-left: 18px;
+  }
+}
+
+
+.avatar {
+  border: 2px solid white;
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  background: coral url("https://avatars.dicebear.com/api/micah/w.svg");
+
+  &.small {
+    width: 25px;
+    height: 25px;
+  }
+}
